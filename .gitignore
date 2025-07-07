@@ -1,0 +1,42 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# macOS system files
+.DS_Store
+
+# Streamlit upload cache
+*.pdf
+*.docx
+*.txt
+*.tmp
+*.temp
+
+# Environment & secrets
+.env
+.env.*
+
+# VS Code settings (optional)
+.vscode/
+
+# Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Log files
+*.log
+
+# Qdrant local binary collections (optional)
+qdrant_storage/
+
+# OS file metadata
+Thumbs.db
+desktop.ini
