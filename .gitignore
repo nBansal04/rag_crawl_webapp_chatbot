@@ -17,7 +17,6 @@ env/
 # Streamlit upload cache
 *.pdf
 *.docx
-*.txt
 *.tmp
 *.temp
 
