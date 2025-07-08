@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
@@ -9,7 +10,8 @@ load_dotenv()
 
 client = OpenAI()
 embedding_model = OpenAIEmbeddings(model="text-embedding-3-large")
-QDRANT_URL = "http://localhost:6333"
+QDRANT_URL = os.getenv("QDRANT_URL")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 COLLECTION_NAME = "chaiaurdocs"
 
 # Initialize session state
@@ -27,7 +29,8 @@ if st.session_state.vector_store is None:
     st.session_state.vector_store = QdrantVectorStore.from_existing_collection(
         url=QDRANT_URL,
         collection_name=COLLECTION_NAME,
-        embedding=embedding_model
+        embedding=embedding_model,
+        api_key=QDRANT_API_KEY
     )
     st.success("✅ Vector store loaded")
 
